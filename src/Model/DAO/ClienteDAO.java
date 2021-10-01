@@ -25,6 +25,7 @@ public class ClienteDAO {
             stmt.setString(4, novoCliente.getTelefone());
            
             stmt.execute();   
+            System.out.println("\nCliente adicionado com sucesso!!");
             
         }catch (SQLException e) {
             e.printStackTrace();
@@ -43,6 +44,8 @@ public class ClienteDAO {
   
             stmt.execute();   
             
+            System.out.println("\nCliente deletado com sucessso!!");
+            
         }catch (SQLException e) {
             e.printStackTrace();
         }
@@ -58,6 +61,7 @@ public class ClienteDAO {
                 String sql = "UPDATE cliente SET telefone = '"+ telefone +"' WHERE cpf like '" + cpf + "'";             
                 PreparedStatement stmt = con.prepareStatement(sql);
   
+                System.out.println("\nTelefone atualizado com sucessso!!");
                 stmt.execute(); 
             
             }else if(opcao.equals("2")){
@@ -65,6 +69,7 @@ public class ClienteDAO {
                 String sql = "UPDATE cliente SET endereco = '"+ address +"' WHERE cpf like '" + cpf + "'";             
                 PreparedStatement stmt = con.prepareStatement(sql);
   
+                System.out.println("\nEndereço atualizado com sucessso!!");
                 stmt.execute(); 
             }else if(opcao.equals("3")){
                 
@@ -75,7 +80,8 @@ public class ClienteDAO {
                 
                 sql = "UPDATE cliente SET endereco = '"+ address +"' WHERE cpf like '" + cpf + "'";             
                 stmt = con.prepareStatement(sql);
-  
+                
+                System.out.println("\nTelefone e endereço atualizado com sucessso!!");
                 stmt.execute();
             }                        
             

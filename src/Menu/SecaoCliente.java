@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 public class SecaoCliente {
     
-    public static Scanner teclado = new Scanner(System.in); //teclado global
+    public static Scanner teclado = new Scanner(System.in,"ISO-8859-1"); //teclado global
     
     public static void cadastrar(){
         
@@ -39,7 +39,7 @@ public class SecaoCliente {
         boolean validaDeleta= true;                
         while(validaDeleta == true){ 
             if(opcaoDeleta.equals("1")!= true && opcaoDeleta.equals("2")!= true){
-                System.out.println("Entrada invalida!! Informe novamente:");
+                System.out.println("\nEntrada invalida!! Informe novamente:");
                 System.out.println("Deseja realmente deletar?\n1-SIM\n2-NÃO");
                 opcaoDeleta = teclado.nextLine();
             }else{
@@ -56,17 +56,17 @@ public class SecaoCliente {
     
     public static void atualizar(){
               
-        System.out.println("Informe o cpf do cliente:");
+        System.out.println("\nInforme o cpf do cliente:");
         String cpf = teclado.nextLine().trim(); 
         
-        System.out.println("O que deseja atualizar:\n1-Telefone\n2-Endereço\n3-Tudo");
+        System.out.println("\nO que deseja atualizar:\n1-Telefone\n2-Endereço\n3-Tudo");
         String opcaoAtt = teclado.nextLine();
         
         boolean validaAtt= true;                
         while(validaAtt == true){         
             
             if(opcaoAtt.equals("1")!= true && opcaoAtt.equals("2")!= true && opcaoAtt.equals("3")!= true){
-                System.out.println("Entrada invalida!! Informe novamente:");
+                System.out.println("\nEntrada invalida!! Informe novamente:");
                 System.out.println("O que deseja atualizar:\n1-Telefone\n2-Endereço\n3-Tudo");
                 opcaoAtt = teclado.nextLine();
             }else{

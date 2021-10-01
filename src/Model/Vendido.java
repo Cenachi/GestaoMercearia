@@ -14,6 +14,12 @@ public class Vendido {
     public Vendido() {
     }
 
+    public Vendido(int quantVendida, Estoque produtoEstoque) {
+        this.quantVendida = quantVendida;
+        this.produtoEstoque = produtoEstoque;
+    }
+    
+
     public Vendido(int quantVendida, double precoVenda, Estoque carrinho) {
         this.quantVendida = quantVendida;
         this.precoVenda = precoVenda;

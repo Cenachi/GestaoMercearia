@@ -14,7 +14,7 @@ public class SecaoProduto {
     
     public static void cadastrar(){
         
-        System.out.println("\nComo deseja cadastrar?\n1-Lista de arquivo\n2-Unico produto");
+        System.out.println("\nComo deseja cadastrar?\n1-Lista de produtos\n2-Unico produto");
         String opcaoProduto = teclado.nextLine();
         
         boolean validaProduto= true;                
@@ -22,8 +22,8 @@ public class SecaoProduto {
         while(validaProduto == true){   
             
             if(opcaoProduto.equals("1")!= true && opcaoProduto.equals("2")!= true){                        
-                System.out.println("Entrada invalida!! Informe novamente:");                        
-                System.out.println("Como deseja cadastrar?\n1-Lista de arquivo\n2-Unico produto");
+                System.out.println("\nEntrada invalida!! Informe novamente:");                        
+                System.out.println("Como deseja cadastrar?\n1-Lista de produtos\n2-Unico produto");
                         
                 opcaoProduto = teclado.nextLine();                   
             }else{                       
@@ -72,7 +72,7 @@ public class SecaoProduto {
         boolean validaDeleta= true;                
         while(validaDeleta == true){ 
             if((opcaoDeleta ==1 != true) && (opcaoDeleta ==2 != true)){
-                System.out.println("Entrada invalida!! Informe novamente:");
+                System.out.println("\nEntrada invalida!! Informe novamente:");
                 System.out.println("Deseja realmente deletar?\n1-SIM\n2-NÃO");
                 opcaoDeleta = teclado.nextInt();
             }else{
@@ -98,7 +98,7 @@ public class SecaoProduto {
         while(validaAtt == true){         
             
             if((opcaoAtt == 1 != true) && (opcaoAtt ==2 != true) && (opcaoAtt == 3 != true)){
-                System.out.println("Entrada invalida!! Informe novamente:");
+                System.out.println("\nEntrada invalida!! Informe novamente:");
                 System.out.println("O que deseja atualizar:\n1-Preço\n2-Quantidade\n3-Tudo");
                 opcaoAtt = teclado.nextInt();
             }else{
@@ -134,8 +134,8 @@ public class SecaoProduto {
     
     public static void listar(){
         System.out.println("------------- LISTANDO PRODUTOS ---------------");
-        System.out.println("Id | Codigo | Nome | Preço | Quantidade\n");
-        
+        System.out.println("Cod.| Nome | Preço | Quant.\n");
+                
         EstoqueDAO.listaProduto();
     }    
 }

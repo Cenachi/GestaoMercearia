@@ -30,16 +30,19 @@ public class Menu {
                         validaCliente = false;
                     }
                 }                   
-           
+                
                 if(opcaoCliente.equals("1")){                   
+                    System.out.println("\n-----------------------------------------------");
                     SecaoCliente.cadastrar();
                 }
                 
                 if(opcaoCliente.equals("2")){
+                    System.out.println("\n-----------------------------------------------");
                     SecaoCliente.deletar();
                 }
                 
                 if(opcaoCliente.equals("3")){
+                    System.out.println("\n-----------------------------------------------");
                     SecaoCliente.atualizar();
                 }
                 
@@ -66,16 +69,19 @@ public class Menu {
                         validaProduto = false;
                     }
                 }        
-                
+                                                
                 if(opcaoProduto.equals("1")){                   
+                    System.out.println("\n-----------------------------------------------");
                     SecaoProduto.cadastrar();
                 }
                 
                 if(opcaoProduto.equals("2")){
+                    System.out.println("\n-----------------------------------------------");
                     SecaoProduto.deletar();
                 }
                 
                 if(opcaoProduto.equals("3")){
+                    System.out.println("\n-----------------------------------------------");
                     SecaoProduto.atualizar();
                 }
                 
@@ -90,7 +96,7 @@ public class Menu {
             
             case "0":
                 System.out.println("\n-----------------------------------------------");
-                System.out.println("\nFinalizando....");
+                System.out.println("Finalizando...\n");
             break;
         }          
     }   

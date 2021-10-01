@@ -36,7 +36,8 @@ public class EstoqueDAO {
                 stmt.setDouble(3, p.getPreco());            
                 stmt.setInt(4, p.getQuantidade());
            
-                stmt.execute();               
+                stmt.execute();   
+                System.out.println("\nProdutos carregados com sucesso!!");
             }
             
             Menu.listSecao();
@@ -63,7 +64,8 @@ public class EstoqueDAO {
                 stmt.setDouble(3, novoProduto.getPreco());            
                 stmt.setInt(4, novoProduto.getQuantidade());
            
-                stmt.execute();               
+                stmt.execute();   
+                System.out.println("\nProduto adicionado com sucesso!!");
             
                 Menu.listSecao();
             
@@ -84,6 +86,7 @@ public class EstoqueDAO {
             PreparedStatement stmt = con.prepareStatement(sql);
   
             stmt.execute();   
+            System.out.println("\nProduto adicionado com sucesso!!");
             
         }catch (SQLException e) {
             e.printStackTrace();
@@ -101,6 +104,7 @@ public class EstoqueDAO {
                 PreparedStatement stmt = con.prepareStatement(sql);
   
                 stmt.execute(); 
+                System.out.println("\nPreço atualizado com sucesso!!");
             
             }else if(opcaoAtt == 2){
                 
@@ -108,6 +112,8 @@ public class EstoqueDAO {
                 PreparedStatement stmt = con.prepareStatement(sql);
   
                 stmt.execute(); 
+                System.out.println("\nQuantidade atualizada com sucesso!!");
+                
             }else if(opcaoAtt == 3){
                 
                 String sql = "UPDATE estoque SET preco = "+ preco +" WHERE codigo = "+codigo;  
@@ -119,6 +125,7 @@ public class EstoqueDAO {
                 stmt = con.prepareStatement(sql);
   
                 stmt.execute();
+                System.out.println("\nPreço e quantidade atualizado com sucesso!!");
             }                        
             
         }catch (SQLException e) {
@@ -137,13 +144,21 @@ public class EstoqueDAO {
             ResultSet rs = stmt.executeQuery(sql);
             
             while (rs.next()) {
-                int id = rs.getInt("id");
+                //int id = rs.getInt("id");
                 int codigo = rs.getInt("codigo");
-                String name = rs.getString("nome");
+                String nome = rs.getString("nome");
                 double preco = rs.getDouble("preco");
                 int quantidade = rs.getInt("quantidade");
                 
-                System.out.format("%s | %s | %s | %s | %s\n", id, codigo, name, preco, quantidade);                
+                System.out.format("%s | %s | R$ %s | %s un.\n",codigo, nome, preco, quantidade);
+                
+                /*
+                if(codigo<10){
+                    System.out.format("%s   | %s | R$ %s | %s un.\n",codigo, nome, preco, quantidade);
+                }else{
+                    System.out.format("%s  | %s | R$ %s | %s un.\n",codigo, nome, preco, quantidade);
+                }    
+                */         
             }
   
             stmt.execute();   
